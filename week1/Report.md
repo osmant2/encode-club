@@ -13,7 +13,7 @@
 * Rehmet Yeshanew (reh#1909)
 * Vikram Barandwal (PowersOfTau#0879)
 * CheckTheKing
-* Arofahdev
+* Ibraheem Arafat (Arofahdev#0716)
 
 ## Deployment and process:
 
@@ -197,6 +197,7 @@ https://sepolia.etherscan.io/tx/0xdfbc978be75efdfde0e6dc507b7ad4ece8c1b4e5c1ce6e
 	Operation ended with a success which transfered the ownership of the contract to 0x169f965ce47119BB4c80d7c435fdE950256CF7c8 (Rehmet) address.
 	
 
+---
 
 
 ### Executing setText function with the input "Hi, Teamate"  :

@@ -11,8 +11,8 @@
 * Osman Tataroglu (ozza#3211)
 * Ahmad Abtahi (Ahmad_Ara#6226)
 * Rehmet Yeshanew (reh#1909)
+* Vikram Barandwal (PowersOfTau#0879)
 * CheckTheKing
-* PowersOfTau
 * Arofahdev
 
 ## Deployment and process:

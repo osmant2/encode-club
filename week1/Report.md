@@ -6,18 +6,20 @@
 -   Interact with “HelloWorld.sol” within your group to change message strings and change owners
 -   Write a report with each function execution and the transaction hash, if successful, or the revert reason, if failed
 
-## Group 6:
+## Group 6 (in contract ownership order):
 
-* Osman Tataroglu (ozza#3211)
 * Ahmad Abtahi (Ahmad_Ara#6226)
+* Osman Tataroglu (ozza#3211)
 * Rehmet Yeshanew (reh#1909)
 * Vikram Barandwal (PowersOfTau#0879)
-* CheckTheKing
 * Ibraheem Arafat (Arofahdev#0716)
+* CheckTheKing
+
 
 ## Deployment and process:
 
-Smart Contract’s (SC) first deployment was implemented by ```Ahmad``` at the ```0x0717A8F7D9D5F679d3DB8f52B4174FF4B9a942e0``` address. Then the team members executed functions and calls on the smart contract with in an order. Transactions were performed with each member’s individual Metamask Wallet over ```Sepolia Testnet```.
+Smart Contract’s first deployment was implemented by ```Ahmad``` at the ```0x0717A8F7D9D5F679d3DB8f52B4174FF4B9a942e0``` address. Then the team members executed functions and calls on the smart contract with in an order[^1]. Transactions were performed with each member’s individual Metamask Wallet over ```Sepolia Testnet```.
+Report consists one or two examples for each function call before and after the address owner taking the ownership of the smart contract.
 
 ---
 
@@ -247,4 +249,6 @@ https://sepolia.etherscan.io/tx/0x395adf0beeb4d6a252599bf76a5262bd327d407d7b4979
 	The transaction was sent from the account 0x169f965ce47119BB4c80d7c435fdE950256CF7c8 to the contract method HelloWorld. transferOwnership (address) at address 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66. (contract re-deployed)
 
 	Operation ended with a success which transfered the ownership of the contract to 0x6473E19183DE2dAf370F3a3Dd9166b5B77618D25 (Vikram Barandwal (PowersOfTau#0879) address by the third owner(rehmet yeshanew).
+---
 
+[^1]: After the first transfer of ownership, there was a confussion with contract addresses (Osman's mistake) and we continue with two separate contracts.

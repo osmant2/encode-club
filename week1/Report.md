@@ -195,3 +195,55 @@ https://sepolia.etherscan.io/tx/0xdfbc978be75efdfde0e6dc507b7ad4ece8c1b4e5c1ce6e
 	The transaction was sent from the account 0x0ebA58d95E8C667C0bC785dad3310A0B1f1CF628 to the contract method HelloWorld. transferOwnership (address) at address 0x655c7f6b06074aC871F44983B8290F54Db060A23. (contract re-deployed)
 
 	Operation ended with a success which transfered the ownership of the contract to 0x169f965ce47119BB4c80d7c435fdE950256CF7c8 (Rehmet) address.
+	
+
+
+
+### Executing setText function with the input "Hi, Teamate"  :
+
+### Debug output:
+
+```
+status			true Transaction mined and execution succeed
+transaction hash	0x07491ef45964f786e2de96a0509de50508a1dd9072e4fd7228fd71e82e06b053
+from             	0x169f965ce47119BB4c80d7c435fdE950256CF7c8
+to			HelloWorld.setText(string) 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66
+gas			3000000 gas
+transaction cost	29848 gas 
+input			0x5d3...00000
+decoded input		{ "string newText": "Hi, Teamate" }
+```
+
+Etherscan Address:
+https://sepolia.etherscan.io/tx/0x6aa9b3960aaf08c82693e89250339ded5832940bb7975eb7f7f63370e5107e39
+
+##### Explanation:
+
+	The transaction was sent from the account 0x169f965ce47119BB4c80d7c435fdE950256CF7c8 to the contract method HelloWorld.setText(string) at address 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66.
+
+	The execution resulted a success, since the address made the request was the current owner of the contract at that time, changing the newText state variable’s value to Hi, Teamate”.
+
+### Executing transferOwnership method with the input “0x6473E19183DE2dAf370F3a3Dd9166b5B77618D25”:
+
+##### Debug Output:
+
+```
+status			true Transaction mined and execution succeed
+transaction hash	0x6aa9b3960aaf08c82693e89250339ded5832940bb7975eb7f7f63370e5107e39
+from			0x169f965ce47119BB4c80d7c435fdE950256CF7c8
+to			HelloWorld.transferOwnership(address) 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66
+gas			27168 gas
+transaction cost	27168 gas 
+input			0xf2f...18d25
+decoded input		{ "address newOwner": "0x6473E19183DE2dAf370F3a3Dd9166b5B77618D25" }
+```
+
+Etherscan Link:
+https://sepolia.etherscan.io/tx/0x395adf0beeb4d6a252599bf76a5262bd327d407d7b49795490ac9c02c6822756
+
+##### Explanation:
+
+	The transaction was sent from the account 0x169f965ce47119BB4c80d7c435fdE950256CF7c8 to the contract method HelloWorld. transferOwnership (address) at address 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66. (contract re-deployed)
+
+	Operation ended with a success which transfered the ownership of the contract to 0x6473E19183DE2dAf370F3a3Dd9166b5B77618D25 (Vikram Barandwal (PowersOfTau#0879) address by the third owner(rehmet yeshanew).
+

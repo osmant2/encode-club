@@ -249,6 +249,55 @@ https://sepolia.etherscan.io/tx/0x395adf0beeb4d6a252599bf76a5262bd327d407d7b4979
 	The transaction was sent from the account 0x169f965ce47119BB4c80d7c435fdE950256CF7c8 to the contract method HelloWorld. transferOwnership (address) at address 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66. (contract re-deployed)
 
 	Operation ended with a success which transfered the ownership of the contract to 0x6473E19183DE2dAf370F3a3Dd9166b5B77618D25 (Vikram Barandwal (PowersOfTau#0879) address by the third owner(rehmet yeshanew).
+
+
+### Executing setText function with the input "Hi team! I(0x647) is the new owner :)"  :
+
+### Debug output:
+
+```
+status			true Transaction mined and execution succeed
+transaction hash	0x2f09345feac91a29505a5278c0f6a3b0697a8efad1a3db9d89c09f022d755180
+from             	0x6473e19183de2daf370f3a3dd9166b5b77618d25
+to			HelloWorld.setText(string) 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66
+gas			74,676 gas
+transaction cost	0.000186690000522732 ETH 
+input			0x5d3...0x5d3a1f9d000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000254869207465616d2120492830783634372920697320746865206e6577206f776e6572203a29000000000000000000000000000000000000000000000000000000
+decoded input		[ 0,	newText,	string,	Hi team! I(0x647) is the new owner :) ]
+```
+
+Etherscan Address:
+https://sepolia.etherscan.io/tx/0x2f09345feac91a29505a5278c0f6a3b0697a8efad1a3db9d89c09f022d755180
+
+##### Explanation:
+
+	The transaction was sent from the account 0x6473e19183de2daf370f3a3dd9166b5b77618d25 to the contract method HelloWorld.setText(string) at address 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66.
+
+	The execution resulted a success, since the address made the request was the current owner of the contract at that time, changing the newText state variable’s value to the provided input `Hi team! I(0x647) is the new owner :)`.
+
+### Executing transferOwnership method with the input `0xc32FdFE8B0d978c225EAF882e1b0c95cE17F25DC`:
+
+##### Debug Output:
+
+```
+status			true Transaction mined and execution succeed
+transaction hash	0xadda3662fb32a05b58dd7d60f660f64a3b7ea50586eb249288c9e42e4d583e53
+from			0x6473e19183de2daf370f3a3dd9166b5b77618d25
+to			HelloWorld.transferOwnership(address) 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66
+gas			27,168 gas
+transaction cost	0.000067920000190176 ETH 
+input			0xf2fde38b000000000000000000000000c32fdfe8b0d978c225eaf882e1b0c95ce17f25dc
+decoded input		[0,	newOwner,	address,	0xc32FdFE8B0d978c225EAF882e1b0c95cE17F25DC]
+```
+
+Etherscan Link:
+https://sepolia.etherscan.io/tx/0xadda3662fb32a05b58dd7d60f660f64a3b7ea50586eb249288c9e42e4d583e53
+
+##### Explanation:
+
+	The transaction was sent from the account 0x6473e19183de2daf370f3a3dd9166b5b77618d25 to the contract method HelloWorld. transferOwnership (address) at address 0xEdc3FDe8EFfbDAd6145DE0a7ab9d927097E87c66.
+
+	Operation ended with a success which transfered the ownership of the contract to  0xc32FdFE8B0d978c225EAF882e1b0c95cE17F25DC [ Ibraheem Arafat (Arofahdev#0716 ].
 ---
 
 [^1]: After the first transfer of ownership, there was a confussion with contract addresses (Osman's mistake) and we continue with two separate contracts.

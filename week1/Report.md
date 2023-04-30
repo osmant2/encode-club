@@ -13,7 +13,7 @@
 * Rehmet Yeshanew (reh#1909)
 * Vikram Barandwal (PowersOfTau#0879)
 * Ibraheem Arafat (Arofahdev#0716)
-* CheckTheKing
+* Kasahun Habtamu (CheckTheKing#8812)
 
 
 ## Deployment and process:

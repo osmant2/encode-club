@@ -4,6 +4,14 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 
 const PROPOSALS = ["Vanilla", "Choco", "Chery"];
 
+/**
+
+    Gives voting rights to an address by calling the 'giveRightToVote' function of the Ballot contract.
+    @param {Ballot} ballotContract - The deployed Ballot contract instance.
+    @param {string} address - The address to which voting rights are to be given.
+    @param {string} name - The name of the voter, for display purposes.
+    @returns {Promise<void>}
+*/
 async function giveRightToVoteToAddress(
   ballotContract: Ballot,
   address: string,
@@ -19,6 +27,13 @@ async function giveRightToVoteToAddress(
   console.log("-------------------------------------------\n");
 }
 
+/**
+
+    Casts a vote for the first proposal in the PROPOSALS array, after making sure that the voter has voting rights.
+    @param {Ballot} ballotContract - The deployed instance of the Ballot contract.
+    @param {SignerWithAddress} voter - The Ethereum address of the voter who will cast the vote.
+    @returns {Promise<void>}
+    */
 async function castVote(ballotContract: Ballot, voter: SignerWithAddress) {
   console.log("CAST VOTE (WITH NO VOTING RIGHTS):");
   console.log(`- Normal Voter's address is: ${voter.address}`);
@@ -52,6 +67,14 @@ async function castVote(ballotContract: Ballot, voter: SignerWithAddress) {
   }
 }
 
+/**
+ * Delegates voting rights of a sick voter to a delegate voter and casts a vote on their behalf.
+ *
+ * @param {Ballot} ballotContract - The instance of the deployed ballot contract.
+ * @param {SignerWithAddress} sickVoter - The address of the sick voter to delegate voting rights from.
+ * @param {SignerWithAddress} delegateVoter - The address of the delegate voter to delegate voting rights to.
+ * @returns {Promise<void>}
+ */
 async function delegateToAddress(
   ballotContract: Ballot,
   sickVoter: SignerWithAddress,
@@ -105,6 +128,13 @@ async function delegateToAddress(
   console.log("-------------------------------------------\n");
 }
 
+/**
+ * Queries the winning proposal and prints the winner's name and ID to the console.
+ *
+ * @param {Ballot} ballotContract - The deployed ballot contract instance.
+ *
+ * @returns {Promise<void>} A Promise that resolves once the winner is printed to the console.
+ */
 async function queryResults(ballotContract: Ballot) {
   const winner = await ballotContract.winningProposal();
   const winnerName = await ballotContract.winnerName();
@@ -115,6 +145,13 @@ async function queryResults(ballotContract: Ballot) {
   );
 }
 
+/**
+ * Deploys the `Ballot` contract, gives voting rights to certain addresses,
+ * and performs voting and delegation actions to simulate the voting process.
+ * Finally, the function queries the results of the election and logs the winner.
+ *
+ * @returns {Promise<void>} Promise that resolves when the function completes successfully.
+ */
 async function main() {
   const [chairperson, voter, sickVoter, delegateVoter] =
     await ethers.getSigners();

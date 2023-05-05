@@ -10,22 +10,23 @@ async function giveRightToVoteToAddress(
   name: string
 ) {
   console.log(`GIVE RIGHT TO VOTE (${name}):`);
-  console.log(`- Giving right to vote to the address: ${address}`);
+  console.log(`- Giving voting rights to vote, to the address: ${address}`);
   const giveRightToVoteTx = await ballotContract.giveRightToVote(address);
   const giveRightToVoteTxReceipt = await giveRightToVoteTx.wait();
   console.log(
     `- The transaction hash is ${giveRightToVoteTxReceipt.transactionHash} included at the block ${giveRightToVoteTxReceipt.blockNumber}\n`
   );
+  console.log("-------------------------------------------\n");
 }
 
 async function castVote(ballotContract: Ballot, voter: SignerWithAddress) {
-  console.log("CAST VOTE (WILL FAIL DUE TO NO VOTING RIGHTS):");
-  console.log(`- Normal Voter address is: ${voter.address}`);
+  console.log("CAST VOTE (WITH NO VOTING RIGHTS):");
+  console.log(`- Normal Voter's address is: ${voter.address}`);
   try {
     console.log(`- Normal Voter voting for proposal '${PROPOSALS[0]}'\n`);
     await ballotContract.connect(voter).vote(0);
   } catch (error) {
-    console.log("- Reverted with reason string 'Has no right to vote'");
+    console.log("- Reverted with reason 'Has no right to vote'");
     const voterHasVoted = await ballotContract.voters(voter.address);
     console.log(
       `- Normal Voter ${voter.address} has voted: ${voterHasVoted.voted}`
@@ -38,10 +39,14 @@ async function castVote(ballotContract: Ballot, voter: SignerWithAddress) {
       "Normal Voter"
     );
     console.log(`- Normal Voter voting for proposal '${PROPOSALS[0]}'\n`);
-    await ballotContract.connect(voter).vote(0);
+    const voteTx = await ballotContract.connect(voter).vote(0);
+    const voteTxRec = await voteTx.wait();
     const voterHasVoted = await ballotContract.voters(voter.address);
     console.log(
       `- Normal Voter ${voter.address} has voted: ${voterHasVoted.voted}`
+    );
+    console.log(
+      `- The transaction hash is ${voteTxRec.transactionHash} included at the block ${voteTxRec.blockNumber}\n`
     );
     console.log("-------------------------------------------\n");
   }
@@ -52,7 +57,7 @@ async function delegateToAddress(
   sickVoter: SignerWithAddress,
   delegateVoter: SignerWithAddress
 ) {
-  console.log("DELEGATING VOTES SICK VOTER TO DELEGATE VOTER:\n");
+  console.log("DELEGATING VOTES OF 'SICK VOTER' TO 'DELEGATE VOTER':\n");
   console.log(`- Sick Voter's address is: ${sickVoter.address}`);
   console.log(`- Delegate Voter's address is: ${delegateVoter.address}\n`);
 
@@ -91,9 +96,12 @@ async function delegateToAddress(
     `- Delegate Voter has ${delegatedVoterDelegation.weight} voting rights\n`
   );
 
-  console.log(`- Delegate Voter voting for proposal '${PROPOSALS[1]}'\n`);
-  await ballotContract.connect(delegateVoter).vote(1);
-
+  const voteTx = await ballotContract.connect(delegateVoter).vote(1);
+  const voteTxRec = await voteTx.wait();
+  console.log(`- Delegate Voter voted for proposal '${PROPOSALS[1]}'`);
+  console.log(
+    `- The transaction hash is ${voteTxRec.transactionHash} included at the block ${voteTxRec.blockNumber}\n`
+  );
   console.log("-------------------------------------------\n");
 }
 

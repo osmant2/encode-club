@@ -5,13 +5,12 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 const PROPOSALS = ["Vanilla", "Choco", "Chery"];
 
 /**
-
-    Gives voting rights to an address by calling the 'giveRightToVote' function of the Ballot contract.
-    @param {Ballot} ballotContract - The deployed Ballot contract instance.
-    @param {string} address - The address to which voting rights are to be given.
-    @param {string} name - The name of the voter, for display purposes.
-    @returns {Promise<void>}
-*/
+ * Gives voting rights to an address by calling the 'giveRightToVote' function of the Ballot contract.
+ * @param {Ballot} ballotContract - The deployed Ballot contract instance.
+ * @param {string} address - The address to which voting rights are to be given.
+ * @param {string} name - The name of the voter, for display purposes.
+ * @returns {Promise<void>}
+ */
 async function giveRightToVoteToAddress(
   ballotContract: Ballot,
   address: string,
@@ -28,12 +27,11 @@ async function giveRightToVoteToAddress(
 }
 
 /**
-
-    Casts a vote for the first proposal in the PROPOSALS array, after making sure that the voter has voting rights.
-    @param {Ballot} ballotContract - The deployed instance of the Ballot contract.
-    @param {SignerWithAddress} voter - The Ethereum address of the voter who will cast the vote.
-    @returns {Promise<void>}
-    */
+ * Casts a vote for the first proposal in the PROPOSALS array, after making sure that the voter has voting rights.
+ * @param {Ballot} ballotContract - The deployed instance of the Ballot contract.
+ * @param {SignerWithAddress} voter - The Ethereum address of the voter who will cast the vote.
+ * @returns {Promise<void>}
+ */
 async function castVote(ballotContract: Ballot, voter: SignerWithAddress) {
   console.log("CAST VOTE (WITH NO VOTING RIGHTS):");
   console.log(`- Normal Voter's address is: ${voter.address}`);

@@ -119,6 +119,7 @@ async function main() {
 
   console.log("-------------------------------------------");
   console.log(`- The chairperson is: ${chairperson.address}`);
+  console.log(`- Proposals for 'THE BEST ICE-CREAM FLAVOR': ${PROPOSALS}`);
   console.log("-------------------------------------------\n");
 
   await castVote(ballotContract, voter);

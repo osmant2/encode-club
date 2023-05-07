@@ -7,7 +7,7 @@
 - Write a report with each function execution and the transaction hash, if successful, or the revert reason, if failed
 - Submit your code in a github repository in the form
 
-## Group 6 (in contract ownership order):
+## Group 6:
 
 * Osman Tataroglu (ozza#3211)
 * Ahmad Abtahi (Ahmad_Ara#6226)

@@ -19,7 +19,7 @@
 ## Deployment and process:
 Script implemented in local environment for homework. Deployment and other interactions on a public testnet, left for members' to study individually at their convenient times.
 
-A scenario is implemented for demonstrating for "Ballot.sol" smart contract's functions, which are giving voting rights, casting votes, delegating votes and querying results. The scenario works in the following order:
+A scenario is created for demonstrating for the "Ballot.sol" smart contract's functions, which are giving voting rights, casting votes, delegating votes and querying results. The scenario works in the following order:
 
 - Getting and displaying general information about the smart contract.
 - Trying to give a vote as a Normal Voter without having voting rights.

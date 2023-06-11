@@ -181,7 +181,7 @@ WARNING: There are 2 .env files, one inside the "hardhat" folder, other is insid
         - Adjusters (admins) from the insurance company can access and process claims by making GET requests to the /claims/{claimId} endpoint, providing the claim ID in the URL.
         - They can update the claim status by making a PATCH request to the /claims/{claimId}/status endpoint, providing the claim ID and the new status in the request body.
 
-#### Warning: You need to implement a claim update mechanism (manual or automatic) after user submits a claim!
+# Warning: You need to implement a claim update mechanism (manual or automatic) after user submits a claim!
 
 ## Current State of Insurance Token and Note About Security:
 

@@ -182,6 +182,12 @@ WARNING: There are 2 .env files, one inside the "hardhat" folder, other is insid
         - They can update the claim status by making a PATCH request to the /claims/{claimId}/status endpoint, providing the claim ID and the new status in the request body.
 
 #### Warning: You need to implement a claim update mechanism (manual or automatic) after user submits a claim!
+
+## Current State of Insurance Token:
+
+Currently system is not using InsuranceToken. You can delete the contract or you can implement some relevant functionality and use it. Premium amount in the insurances are display only.
+
+Also, there should be more owner and msg.sender checks in the contracts in order to ensuring security. But some of my implementations broke the contracts, so I removed them. You can add in the necessary places.
  
 
 It was a pleasure to work with you guys! I wish you the best! Hope you can manage it.

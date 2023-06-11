@@ -183,7 +183,7 @@ WARNING: There are 2 .env files, one inside the "hardhat" folder, other is insid
 
 #### Warning: You need to implement a claim update mechanism (manual or automatic) after user submits a claim!
 
-## Current State of Insurance Token:
+## Current State of Insurance Token and Note About Security:
 
 Currently system is not using InsuranceToken. You can delete the contract or you can implement some relevant functionality and use it. Premium amount in the insurances are display only.
 

@@ -154,9 +154,34 @@ WARNING: There are 2 .env files, one inside the "hardhat" folder, other is insid
     - To start a Hardhat Server, go to your Hardhat directory and run the command:
         yarn hardhat node
 
-    It will start a server. Don't close the terminal window!
+    - It will start a server. Don't close the terminal window!
 
     - In another terminal window you can run your scripts by indicating your server as a parameter. like this:
         yarn hardhat run ./scripts/NewScript.ts --network localhost
+        
+## Workflow:
+ 
+#### Vehicle Registration:
+        - All vehicles' information can be accessed by making a GET request to the /vehicles endpoint.
+        - To register a new vehicle, users make a POST request to the /vehicles endpoint.
+        - Users provide license plate in the request body.
+        - The system records the vehicle information on the blockchain.
+
+#### Insurance Policy Management:
+        - All policy informationcan be accessed by making a GET request to the /insurance-policies endpoint.
+        - To create a new insurance policy, users make a POST request to the /insurance-policies endpoint.
+        - User provide the policy details, (only premium amount for now) in the request body.
+        - The system generates a policy ID (starting from 0), records the policy on the blockchain.
+        - Users can also retrieve specific insurance policies by making a GET request to the /insurance-policies/{policyId} endpoint, providing the policy ID in the URL.
+
+#### Claim Submission and Processing:
+        - To submit a claim, users make a POST request to the /claims endpoint.
+        - They provide the necessary details such as the policy ID and description in the request body.
+        - Users can track their claims by making a GET request to the /claims endpoint, which retrieves and displays a list of all submitted claims.
+        - Adjusters (admins) from the insurance company can access and process claims by making GET requests to the /claims/{claimId} endpoint, providing the claim ID in the URL.
+        - They can update the claim status by making a PATCH request to the /claims/{claimId}/status endpoint, providing the claim ID and the new status in the request body.
+
+#### Warning: You need to implement a claim update mechanism (manual or automatic) after user submits a claim!
+ 
 
 It was a pleasure to work with you guys! I wish you the best! Hope you can manage it.

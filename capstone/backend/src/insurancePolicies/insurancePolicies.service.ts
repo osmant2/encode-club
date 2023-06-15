@@ -4,7 +4,7 @@ import {
   CreateInsurancePolicyDto,
   UpdatePolicyStatusDto,
   AssociateClaimDto,
-} from './insurancepolicies.dto';
+} from './insurancePolicies.dto';
 
 @Injectable()
 export class InsurancePoliciesService {

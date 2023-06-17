@@ -1,8 +1,11 @@
 import React from 'react'
+import AllVehicleTable from '../components/AllVehicleTable'
 
 const Allvehicle = () => {
   return (
-    <div>allvehicle</div>
+    <div className='my-20'>
+      <AllVehicleTable/>
+    </div>
   )
 }
 

@@ -1,4 +1,4 @@
 import abi from './InsurancePolicyContract.json';
 
 export const contractABI = abi.abi;
-export const contractAddress = '0x44800f628Dc6598c84be1e34285c3b6E7e37F333';
+export const contractAddress = '0x538b33f74E262B20D9E678D77CdB4D8839F0b44b';

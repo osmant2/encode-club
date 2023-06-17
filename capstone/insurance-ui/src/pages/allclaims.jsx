@@ -1,9 +1,12 @@
 import React from 'react'
+import AllClaimsTable from '../components/AllClaimsTable'
 
-const allclaims = () => {
+const AllClaims = () => {
   return (
-    <div>allclaims</div>
+    <div className='my-20'>
+      <AllClaimsTable/>
+    </div>
   )
 }
 
-export default allclaims
+export default AllClaims

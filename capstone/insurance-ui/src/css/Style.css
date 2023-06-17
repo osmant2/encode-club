@@ -1,0 +1,49 @@
+/* Table */
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+       margin-bottom: 2rem;
+  }
+  
+  table td, table th {
+    border: 1px solid rgb(61, 109, 3);
+    padding: 8px;
+  }
+  
+  table tr:nth-child(odd){background-color: #ffffff;}
+  table tr:nth-child(even){background-color: #907f051f;}
+  
+  table tr:hover {background-color: rgba(2, 100, 43, 0.212);}
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: white;
+    background-color: #02461b;
+  }
+
+  /* box */
+  
+  .box{
+    background-image: 
+     radial-gradient(at 0% 0%, rgb(255, 254, 240) 0, transparent 50%), 
+     radial-gradient(at 50% 0%, rgb(255, 255, 255) 0, transparent 50%), 
+     radial-gradient(at 100% 0%, rgb(200, 250, 220) 0, transparent 50%);
+  }
+
+  /* card */
+  .card{
+    background-image: 
+     radial-gradient(at 0% 0%, rgb(255, 254, 240) 0, transparent 50%), 
+     radial-gradient(at 50% 0%, rgb(255, 255, 255) 0, transparent 50%), 
+     radial-gradient(at 100% 0%, rgb(255, 254, 240) 0, transparent 50%);
+  }
+
+    /* btnbox */
+    .btn-box{
+      background-image: 
+       radial-gradient(at 0% 0%, rgb(216, 227, 6) 0, transparent 80%), 
+       radial-gradient(at 50% 0%, rgb(216, 227, 6) 0, transparent 50%), 
+       radial-gradient(at 100% 0%, rgb(216, 227, 6) 0, transparent 100%);
+    }

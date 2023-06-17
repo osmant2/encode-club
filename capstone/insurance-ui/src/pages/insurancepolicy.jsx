@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import PolicyRegisteration from '../components/PolicyRegisteration';
 
 const InsurancePolicy = () => {
-  return (
-    <div>InsurancePolicy</div>
+   return (
+    <>
+      <div>
+         <PolicyRegisteration/>
+      </div>
+    </>
   )
 }
 

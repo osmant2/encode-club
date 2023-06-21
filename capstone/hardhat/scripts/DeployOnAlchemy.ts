@@ -47,7 +47,7 @@ async function main() {
   const claimContractTx = await claimContract.deployTransaction.wait();
 
   console.log(
-    `Claim Contra is deployed at address ${claimContract.address} at block ${claimContractTx.blockNumber}`
+    `Claim Contract is deployed at address ${claimContract.address} at block ${claimContractTx.blockNumber}`
   );
 
   const insuranceTokenContractFactory = new InsuranceTokenContract__factory(

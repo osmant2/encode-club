@@ -50,14 +50,14 @@ contract ClaimContract is Ownable {
         transferOwnership(msg.sender);
     }
 
-    function submitClaim(uint256 _policyId, string memory _description) public {
+    function submitClaim(uint256 index, uint256 _policyId, string memory _description) public {
         _newclaimId.increment();
         require(_policyId >= 0, "Invalid policy ID");
         require(bytes(_description).length > 0, "Description cannot be empty");
         uint256 newClaimId = _newclaimId.current();
         
         require(insurancePolicyContract.policyExists(_policyId), "Policy doesn't exist"); // Check if policy exists
-        require(vehicleContract.checkVehicle(msg.sender, _policyId), "You haven't registered for these policy, You can not claim");
+        require(vehicleContract.checkVehicle(index, _policyId), "You haven't registered for these policy, You can not claim");
         //require(owner() == msg.sender, "Only contract owner can submit claims");
 
         claims[newClaimId] = Claim(
@@ -116,7 +116,7 @@ contract ClaimContract is Ownable {
 
    function listAllClaims() public view returns (Claim[] memory) {
         uint Count = _newclaimId.current();
-        Claim[] memory  claimss = new Claim[](Count);
+        Claim[] memory  lists = new Claim[](Count);
         uint currentIndex = 0;
         uint currentId;
         //at the moment currentlyListed is true for all, if it becomes false in the future we will 
@@ -124,12 +124,10 @@ contract ClaimContract is Ownable {
         {
             currentId = i + 1;
             Claim storage currentItem = claims[currentId];
-            claimss[currentIndex] = currentItem;
+            lists[currentIndex] = currentItem;
             currentIndex += 1;
         }
         //the array 'tokens' has the list of all NFTs in the marketplace
-        return claimss;
+        return lists;
     }
- 
-
-}
+ }
